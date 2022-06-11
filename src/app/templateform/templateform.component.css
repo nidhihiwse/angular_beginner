@@ -1,0 +1,7 @@
+input.ng-pristine.ng-invalid.ng-touched {
+    border-color: red;
+}
+
+span {
+    color:red;
+}

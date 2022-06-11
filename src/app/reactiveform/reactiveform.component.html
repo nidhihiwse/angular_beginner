@@ -1,0 +1,37 @@
+<h2>reactiveform works!</h2>
+
+  <form [formGroup]="regForm" (ngSubmit)="register(regForm)">
+    <div>
+       <input type="text" placeholder="enter first name" formControlName="fname" />
+       <div *ngIf="regForm.controls['fname'].touched && !regForm.controls['fname'].valid">
+        <span *ngIf="regForm.controls['fname'].hasError('required')">First name is required</span>
+        <span *ngIf="regForm.controls['fname'].hasError('minlength')">min length should be 3</span>
+        <span *ngIf="regForm.controls['fname'].hasError('maxlength')">max length should be 10</span>
+       </div>
+    </div>
+    <div>
+      <input type="text" placeholder="enter last name" formControlName="lname" />
+      <div *ngIf="regForm.controls['lname'].touched && !regForm.controls['lname'].valid">
+        <span *ngIf="regForm.controls['lname'].hasError('required')">last name is required</span>
+        <span *ngIf="regForm.controls['lname'].hasError('minlength')">min length should be 10</span>
+        <span *ngIf="regForm.controls['lname'].hasError('maxlength')">max length should be 10</span>
+       </div>
+    </div>
+    <div>
+    <input type="email" placeholder="enter email" formControlName="email" />
+    <div *ngIf="regForm.controls['email'].touched && !regForm.controls['email'].valid">
+        <span *ngIf="regForm.controls['email'].hasError('required')">email is required</span>
+        <span *ngIf="regForm.controls['email'].hasError('minlength')">min length should be 3</span>
+        <span *ngIf="regForm.controls['email'].hasError('maxlength')">max length should be 10</span>
+       </div>
+    </div> 
+    <div>
+        <input type="number" placeholder="enter mobile" formControlName="mobileno" />
+        </div> 
+    <div>
+      <input type="submit" value="register" [disabled]="regForm.invalid" />
+      <button type="reset">reset</button>
+      <button type="button" (click)="reset()">reset2</button>
+      <button type="button" (click)="filldata()">fillData</button>
+    </div>
+  </form>

@@ -7,4 +7,6 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'my-app';
+  msg:string = "Nidhi";
+  para:string = "Angular Live Development Server is listening on localhost:4200, open your browser on Browser application bundle generation complete.";
 }
